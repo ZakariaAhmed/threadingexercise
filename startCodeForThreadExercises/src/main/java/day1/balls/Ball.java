@@ -1,13 +1,12 @@
 package day1.balls;
 
-
 import javax.swing.JPanel;
 import java.awt.*;
 
 /**
  * Start code for Thread Exercise
  */
-class Ball {
+class Ball extends Thread {
 
   private final int SLEEP_TIME = 30;
   Color color;

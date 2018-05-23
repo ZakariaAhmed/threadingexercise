@@ -30,4 +30,11 @@ public class Tester {
     System.out.println("Number of random numbers below 50: " + consumer.getBelow50().size());
     System.out.println("Number of random numbers >= 50: " + consumer.getAboveOr50().size());
   }
+  
+  //A)  - Using threads, we are able (in theory) double the speed up the proccess of producing numbers.
+  //    - You should use as many threads as it is useful, this exercise will show what happends when the threads produces faster then others consume.
+  //    - I would use put()
+  //    - I would use take()
+  
+  
 }

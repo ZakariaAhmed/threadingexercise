@@ -3,8 +3,10 @@ package day2.rndnumberprodcon;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class RandomNumberConsumer implements Runnable {
+public class RandomNumberConsumer  implements Runnable {
 
   ArrayBlockingQueue<Integer> numbersProduced;
 
@@ -20,7 +22,21 @@ public class RandomNumberConsumer implements Runnable {
   public void run() {
     //In this exercise, we start four threads, each producing 100 numbers, so we know how much to consume
     for (int i = 0; i < 400; i++) {
-      //Todo: Fetch numbers from numbersProduced and do what you have to do
+        try {
+            int num = numbersProduced.take();
+            System.out.println(num);
+            if (num < 50) {
+                below50.add(num);
+            }
+            else {
+                aboveOr50.add(num);
+            }
+            sumTotal += num;
+                    
+            //Todo: Fetch numbers from numbersProduced and do what you have to do
+        } catch (InterruptedException ex) {
+            Logger.getLogger(RandomNumberConsumer.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
   }
 

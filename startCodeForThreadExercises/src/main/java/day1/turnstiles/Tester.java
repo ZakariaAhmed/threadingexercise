@@ -31,4 +31,9 @@ public class Tester {
     //Print the updated value
     System.out.println(sharedCounter.getValue());
   }
+  
+  //A) No I do not get the expected result (40000)
+  //B) The different threads intervene and updates over each other, leading to race conditions
+  
+  
 }
